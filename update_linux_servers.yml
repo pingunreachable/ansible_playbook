@@ -3,6 +3,7 @@
   hosts: servers
   gather_facts: true
   become: true
+  become_method: sudo
 
   serial: 2
 
