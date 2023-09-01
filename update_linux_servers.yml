@@ -4,7 +4,7 @@
   gather_facts: yes
   become: yes
 
-  serial: 1
+  serial: 2
 
   tasks:
     - name: Perform a dist-upgrade.
