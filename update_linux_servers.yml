@@ -13,8 +13,8 @@
       ansible.builtin.apt:
         upgrade: dist
         #update_cache: true
-        autoclean: true
-        autoremove: true
+        #autoclean: true
+        #autoremove: true
 
     - name: Check if a reboot is required.
       ansible.builtin.stat:
