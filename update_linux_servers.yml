@@ -2,7 +2,7 @@
 - name: Update linux servers
   hosts: servers
   gather_facts: yes
-  become: yes
+  #become: yes
 
   serial: 2
 
