@@ -12,9 +12,9 @@
     - name: Perform a dist-upgrade.
       ansible.builtin.apt:
         upgrade: dist
-        #update_cache: true
-        #autoclean: true
-        #autoremove: true
+        update_cache: true
+        autoclean: true
+        autoremove: true
 
     - name: Check if a reboot is required.
       ansible.builtin.stat:
