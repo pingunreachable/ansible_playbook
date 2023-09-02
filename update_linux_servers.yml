@@ -1,10 +1,10 @@
 ---
 - name: Update linux servers
   hosts: servers
-  gather_facts: true
+  #gather_facts: true
   #become: true
   #become_method: sudo
-  connection: ssh
+  #connection: ssh
 
   serial: 2
 
