@@ -1,6 +1,6 @@
 ---
 - name: Update linux servers
-  #hosts: servers
+  hosts: linux_servers
   #gather_facts: true
   #become: true
   #become_method: sudo
