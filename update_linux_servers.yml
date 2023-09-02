@@ -12,7 +12,7 @@
     - name: Perform a dist-upgrade.
       ansible.builtin.apt:
         upgrade: dist
-        update_cache: true
+        #update_cache: true
         autoclean: true
         autoremove: true
       become: true
