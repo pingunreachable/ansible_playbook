@@ -2,9 +2,9 @@
 - name: Update linux servers
   hosts: servers
   #gather_facts: true
-  become: true
-  become_method: sudo
-  connection: ssh
+  #become: true
+  #become_method: sudo
+  #connection: ssh
 
   serial: 2
 
@@ -15,6 +15,8 @@
         update_cache: true
         autoclean: true
         autoremove: true
+      become: true
+      become_method: sudo
 
     - name: Check if a reboot is required.
       ansible.builtin.stat:
