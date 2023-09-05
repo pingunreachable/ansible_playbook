@@ -1,10 +1,10 @@
 ---
 - name: Update linux servers
   hosts: linux_servers
-  #gather_facts: true
-  #become: true
-  #become_method: sudo
-  #connection: ssh
+  gather_facts: true
+  become: true
+  become_method: sudo
+  connection: ssh
 
   serial: 2
 
@@ -12,11 +12,11 @@
     - name: Perform a dist-upgrade.
       ansible.builtin.apt:
         upgrade: dist
-        #update_cache: true
+        update_cache: true
         autoclean: true
         autoremove: true
-      become: true
-      become_method: sudo
+      #become: true
+      #become_method: sudo
 
     - name: Check if a reboot is required.
       ansible.builtin.stat:
