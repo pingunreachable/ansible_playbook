@@ -1,6 +1,7 @@
 ---
-- name: Set authorized key for remote user
-  ansible.posix.authorized_key:
-    user: "{{ ubtuser }}"
-    state: present
-    key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+ tasks:
+  - name: Set authorized key for remote user
+    ansible.posix.authorized_key:
+     user: "{{ ubtuser }}"
+     state: present
+     key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
