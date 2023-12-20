@@ -11,4 +11,4 @@
      ansible.posix.authorized_key:
       user: "{{ ubtuser }}"
       state: present
-      key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+      keyfile: "~/.ssh/authorized_keys"
