@@ -1,7 +1,7 @@
 ---
 - name: Initial setup of linux servers
   hosts: wireguard
-  gather_facts: false
+  gather_facts: true
   become: yes
   become_method: sudo
   connection: ssh
