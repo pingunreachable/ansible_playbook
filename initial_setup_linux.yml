@@ -1,0 +1,14 @@
+---
+- name: Initial setup of linux servers
+  hosts: wireguard
+  gather_facts: yes
+  become: yes
+  become_method: sudo
+  connection: ssh
+
+  tasks:
+    - name: Set authorized key for remote user
+      ansible.posix.authorized_key:
+        user: "{{ wireguard }}"
+        state: present
+        key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
