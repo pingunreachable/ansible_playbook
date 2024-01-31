@@ -13,6 +13,6 @@
         state: present
         key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
         
-    - name: Set timezone to Asia/Tokyo
+    - name: Set timezone to Australia/Perth
       community.general.timezone:
-        name: Asia/Tokyo
+        name: Australia/Perth
