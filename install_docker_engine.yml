@@ -6,14 +6,7 @@
   become_method: sudo
   connection: ssh
 
-  tasks:
-    - name: Perform a dist-upgrade.
-      ansible.builtin.apt:
-        upgrade: dist
-        update_cache: true
-        autoclean: true
-        autoremove: true
-    
+  tasks:    
     - name: Install aptitude
       apt:
         name: aptitude
@@ -41,7 +34,7 @@
         
     - name: Add Docker Repository
       apt_repository:
-        repo: deb amd64 https://download.docker.com/linux/ubuntu jammy stable
+        repo: "deb amd64 https://download.docker.com/linux/ubuntu jammy stable"
         state: present
 
     - name: Update apt and install docker-ce
