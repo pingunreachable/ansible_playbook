@@ -17,20 +17,23 @@
       community.general.timezone:
         name: Australia/Perth
         
-    - name: Perform a dist-upgrade.
+    - name: Perform a dist-upgrade
       ansible.builtin.apt:
         upgrade: dist
         update_cache: true
-        autoclean: true
-        autoremove: true
 
-    - name: Check if a reboot is required.
+    - name: Check if a reboot is required
       ansible.builtin.stat:
         path: /var/run/reboot-required
-        get_md5: no
+        get_md5: false
       register: reboot_required_file
 
-    - name: Reboot the server (if required).
+    - name: Reboot the server
       ansible.builtin.reboot:
         test_command: whoami
       when: reboot_required_file.stat.exists == true
+      
+    - name: Remove dependencies that are no longer required
+      ansible.builtin.apt:
+        autoclean: true
+        autoremove: true
