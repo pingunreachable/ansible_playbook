@@ -5,7 +5,6 @@
   become: true
   become_method: sudo
   connection: ssh
-
   serial: 2
 
   tasks:
