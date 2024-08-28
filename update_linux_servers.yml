@@ -29,4 +29,4 @@
     - name: Remove dependencies that are no longer required
       ansible.builtin.apt:
         autoclean: true
-        autoremove: yes
+        autoremove: true
