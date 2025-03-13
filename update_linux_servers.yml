@@ -16,6 +16,7 @@
     - name: Check if a reboot is required
       ansible.builtin.stat:
         path: /var/run/reboot_required_file
+        checksum_algorithm: md5
       register: reboot_required_file
 
     - name: Reboot the server
