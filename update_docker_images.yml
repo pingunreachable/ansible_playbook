@@ -1,0 +1,26 @@
+---
+- name: Pull and start container using latest image
+  hosts: ubtserver_networkmgmt
+  gather_facts: false
+  connection: ssh
+  become: true
+  vars:
+    compose_dirs:
+      - "{{ lookup('env', 'path1') }}"
+      - "{{ lookup('env', 'path2') }}"
+      - "{{ lookup('env', 'path3') }}"
+
+  tasks:
+    - name: Update and start container using latest docker images
+      community.docker.docker_compose_v2:
+        project_src: "{{ current_dir }}"
+        pull: always
+        state: present
+      register: output
+      loop: "{{ compose_dirs }}"    
+      loop_control:
+        loop_var: current_dir
+
+    - name: Show results of starting services
+      ansible.builtin.debug:
+        var: output
