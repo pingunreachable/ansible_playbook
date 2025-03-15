@@ -11,7 +11,7 @@
       - "{{ lookup('env', 'path3') }}"
 
   tasks:
-    - name: Update and start container using latest docker images
+    - name: Pull and start latest docker images
       community.docker.docker_compose_v2:
         project_src: "{{ current_dir }}"
         pull: always
