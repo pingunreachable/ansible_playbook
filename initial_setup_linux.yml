@@ -5,6 +5,7 @@
   become: yes
   become_method: sudo
   connection: ssh
+  ansible.builtin.import_playbook: update_linux_servers.yml
 
   tasks:
     - name: Change default password of existing user
@@ -26,5 +27,3 @@
       community.general.timezone:
         name: Australia/Perth
         
-    - name: Run update_linux_servers playbook
-      include_playbook: update_linux_servers.yml
