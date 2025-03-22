@@ -5,7 +5,6 @@
   become: yes
   become_method: sudo
   connection: ssh
-  ansible.builtin.import_playbook: update_linux_servers.yml
 
   tasks:
     - name: Change default password of existing user
