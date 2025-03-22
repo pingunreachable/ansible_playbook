@@ -10,7 +10,7 @@
     - name: Change default password of existing user
       user:
         name: "{{ ansible_user }}"
-        password: "{{ ansible_password | password_hash('sha512')}}"
+        password: "{{ ansible_password }}"
 
     - name: Set authorized key for remote user
       ansible.posix.authorized_key:
