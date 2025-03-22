@@ -27,4 +27,4 @@
         name: Australia/Perth
         
     - name: Run update_linux_servers playbook
-      import_playbook: update_linux_servers.yml
+      include_playbook: update_linux_servers.yml
