@@ -5,6 +5,8 @@
   become: yes
   become_method: sudo
   connection: ssh
+  tasks:
+    - include_playbook: update_linux_servers.yml
 
   tasks:
     - name: Set authorized key for remote user
