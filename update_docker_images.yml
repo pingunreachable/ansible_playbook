@@ -1,5 +1,5 @@
 ---
-- name: Pull and start container using latest image
+- name: Update existing docker containers to latest image
   hosts: ubtserver_networkmgmt
   gather_facts: false
   connection: ssh
