@@ -18,4 +18,4 @@
         name: Australia/Perth
 
     - name: Include initial setup tasks
-      include_tasks: test_include_tasks.yml
+      include_tasks: tasks_apt_update_upgrade.yml
