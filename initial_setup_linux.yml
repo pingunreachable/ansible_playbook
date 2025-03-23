@@ -27,7 +27,7 @@
         password: "{{ ansible_password }}"
     
     - name: debug variables
-      debug:
+      ansible.builtin.debug:
         msg:
           - "Variable 1: {{ ansible_user }}"
           - "Variable 2: {{ ansible_password }}"
