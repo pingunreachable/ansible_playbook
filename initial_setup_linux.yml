@@ -28,4 +28,4 @@
     
     - name: debug variables
       ansible.builtin.debug:
-        var: server_hostname
+        var: "{{ server_hostname }}" 
