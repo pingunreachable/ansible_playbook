@@ -5,6 +5,10 @@
   become: yes
   become_method: sudo
   connection: ssh
+  task:
+    - name: debug variables
+      ansible.builtin.debug:
+        var: "{{ server_hostname }}" 
 
   tasks:
     - name: Set authorized key for remote user
@@ -25,7 +29,4 @@
       user:
         name: "{{ ansible_user }}"
         password: "{{ ansible_password }}"
-    
-    - name: debug variables
-      ansible.builtin.debug:
-        var: "{{ server_hostname }}" 
+  
