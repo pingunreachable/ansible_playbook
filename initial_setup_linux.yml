@@ -20,4 +20,15 @@
     - name: Set hostname
       ansible.builtin.hostname:
         name: "{{ server_hostname }}" 
-        
+
+    - name: Change default password of existing user
+      user:
+        name: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+    
+    - name: debug variables
+      debug:
+        msg:
+          - "Variable 1: {{ ansible_user }}"
+          - "Variable 2: {{ ansible_password }}"
+          - "Variable 3: {{ server_hostname }}"
