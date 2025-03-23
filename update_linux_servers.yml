@@ -9,4 +9,4 @@
 
   tasks:
     - name: Include initial setup tasks
-      include_tasks: tasks_apt_update_upgrade.yml
+      include_tasks: common_tasks/tasks_apt_update_upgrade.yml
