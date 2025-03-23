@@ -28,7 +28,4 @@
     
     - name: debug variables
       ansible.builtin.debug:
-        msg:
-          - "Variable 1: {{ ansible_user }}"
-          - "Variable 2: {{ ansible_password }}"
-          - "Variable 3: {{ server_hostname }}"
+        var: server_hostname
