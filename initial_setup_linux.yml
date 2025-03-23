@@ -17,8 +17,7 @@
       community.general.timezone:
         name: Australia/Perth
 
-    - name: Change default password of existing user
-      user:
-        name: "{{ ansible_user }}"
-        password: "{{ ansible_password }}"     
+    - name: Set hostname
+      ansible.builtin.hostname:
+        name: "{{ server_hostname }}" 
         
