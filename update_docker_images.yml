@@ -9,6 +9,7 @@
       - "{{ lookup('env', 'path1') }}"
       - "{{ lookup('env', 'path2') }}"
       - "{{ lookup('env', 'path3') }}"
+      - "{{ lookup('env', 'path4') }}"
 
   tasks:
     - name: Pull and start latest docker images
