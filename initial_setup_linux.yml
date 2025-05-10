@@ -19,3 +19,13 @@
 
     - name: Include initial setup tasks
       include_tasks: common_tasks/tasks_apt_update_upgrade.yml
+
+    - name: Set hostname
+      ansible.builtin.hostname:
+        name: "{{ updated_hostname }}" 
+
+    - name: Change default password of existing user
+      user:
+        name: "{{ ansible_user }}"
+        password: "{{ updated_password }}"
+        update_password: always
