@@ -27,5 +27,5 @@
     - name: Change default password of existing user
       ansible.builtin.user:
         name: "{{ ansible_user }}"
-        password: "{{ lookup('env', 'update_password') }}"
+        password: "{{ lookup('env', 'update_password' | password_hash('sha512')) }}"
         update_password: always
