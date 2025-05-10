@@ -13,10 +13,10 @@
         state: present
         key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
 
-#    - name: Set hostname
-#      ansible.builtin.hostname:
-#        name: "{{ updated_hostname }}" 
-#        use: debian
+    - name: Set hostname
+      ansible.builtin.hostname:
+        name: "{{ lookup('env', 'updated_hostname') }}" 
+        use: debian
 
     - name: Set timezone to Australia/Perth
       community.general.timezone:
