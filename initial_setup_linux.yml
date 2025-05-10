@@ -13,16 +13,16 @@
         state: present
         key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
 
+    - name: Set hostname
+      ansible.builtin.hostname:
+        name: "{{ updated_hostname }}" 
+
     - name: Set timezone to Australia/Perth
       community.general.timezone:
         name: Australia/Perth
 
     - name: Include initial setup tasks
       include_tasks: common_tasks/tasks_apt_update_upgrade.yml
-
-    - name: Set hostname
-      ansible.builtin.hostname:
-        name: "{{ updated_hostname }}" 
 
     - name: Change default password of existing user
       user:
