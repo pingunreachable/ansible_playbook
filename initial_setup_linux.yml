@@ -9,13 +9,13 @@
   tasks:
     - name: Set authorized key for remote user
       ansible.posix.authorized_key:
-        user: "{{ lookup('env', 'ansible_user') }}"
+        user: "{{ lookup('vars', 'ansible_user') }}"
         state: present
         key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
 
     - name: Set hostname
       ansible.builtin.hostname:
-        name: "{{ lookup('env', 'update_hostname') }}" 
+        name: "{{ lookup('vars', 'update_hostname') }}" 
 
     - name: Set timezone to Australia/Perth
       community.general.timezone:
@@ -26,6 +26,6 @@
 
     - name: Change default password of existing user
       user:
-        name: "{{ lookup('env', 'ansible_user') }}"
-        password: "{{ lookup('env', 'update_password') }}"
+        name: "{{ lookup('vars', 'ansible_user') }}"
+        password: "{{ lookup('vars', 'update_password') }}"
         update_password: always
