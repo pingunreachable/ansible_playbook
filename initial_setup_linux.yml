@@ -16,7 +16,6 @@
     - name: Set hostname
       ansible.builtin.hostname:
         name: "{{ lookup('env', 'update_hostname') }}" 
-        use: debian
 
     - name: Set timezone to Australia/Perth
       community.general.timezone:
