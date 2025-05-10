@@ -9,13 +9,13 @@
   tasks:
     - name: Set authorized key for remote user
       ansible.posix.authorized_key:
-        user: "{{ lookup('vars', 'ansible_user') }}"
+        user: "{{ ansible_user }}"
         state: present
         key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
 
     - name: Set hostname
       ansible.builtin.hostname:
-        name: "{{ lookup('vars', 'update_hostname') }}" 
+        name: "{{ lookup('env', 'update_hostname') }}" 
 
     - name: Set timezone to Australia/Perth
       community.general.timezone:
@@ -25,7 +25,7 @@
 #      include_tasks: common_tasks/tasks_apt_update_upgrade.yml
 
     - name: Change default password of existing user
-      user:
-        name: "{{ lookup('vars', 'ansible_user') }}"
-        password: "{{ lookup('vars', 'update_password') }}"
+      ansible.builtin.user:
+        name: "{{ ansible_user }}"
+        password: "{{ lookup('env', 'update_password') }}"
         update_password: always
