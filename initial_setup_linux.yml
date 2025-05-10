@@ -21,8 +21,8 @@
       community.general.timezone:
         name: Australia/Perth
 
-    - name: Include initial setup tasks
-      include_tasks: common_tasks/tasks_apt_update_upgrade.yml
+#    - name: Include initial setup tasks
+#      include_tasks: common_tasks/tasks_apt_update_upgrade.yml
 
     - name: Change default password of existing user
       user:
