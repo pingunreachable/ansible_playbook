@@ -24,8 +24,8 @@
 #    - name: Include initial setup tasks
 #      include_tasks: common_tasks/tasks_apt_update_upgrade.yml
 
-    - name: Change default password of existing user
+    - name: Change default password
       ansible.builtin.user:
         name: "{{ ansible_user }}"
-        password: "{{ lookup('env', 'update_password' | password_hash('sha512')) }}"
+        password: "{{ lookup('env', 'update_password') }}"
         update_password: always
