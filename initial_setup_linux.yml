@@ -22,7 +22,8 @@
         name: Australia/Perth
 
     - name: Include initial setup tasks
-      include_tasks: 
+      include_tasks: "{{ item }}"
+      loop:
         - common_tasks/task_apt_update_upgrade.yml
         - common_tasks/task_install_docker_engine.yml
 
