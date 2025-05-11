@@ -22,7 +22,10 @@
         name: Australia/Perth
 
     - name: Include initial setup tasks
-      include_tasks: common_tasks/task_apt_update_upgrade.yml
+      include_tasks: "{{ tasks }}"
+      loop:
+        - common_tasks/task_apt_update_upgrade.yml
+        - common_tasks/task_install_docker_engine.yml
 
     - name: Change default password
       ansible.builtin.user:
