@@ -8,5 +8,5 @@
   serial: 2
 
   tasks:
-    - name: Include initial setup tasks
-      include_tasks: common_tasks/tasks_apt_update_upgrade.yml
+    - name: apt update and apt upgrade tasks
+      include_tasks: common_tasks/task_apt_update_upgrade.yml
