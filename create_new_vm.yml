@@ -1,9 +1,7 @@
 ---
 - name: Create new VM from template
-  #hosts: initial_setup_server
-  #become: yes
-  #become_method: sudo
-  #connection: ssh
+  hosts: localhost
+  connection: local
   
   tasks:
     - name: Create new VM from custom_ubuntu22.04 template
