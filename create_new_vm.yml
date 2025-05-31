@@ -1,0 +1,33 @@
+---
+- name: Initial setup of linux servers
+  hosts: initial_setup_server
+  become: yes
+  become_method: sudo
+  connection: ssh
+  
+  tasks:
+    - name: Create a VM from a template
+      community.general.xenserver_guest:
+        hostname: "{{ xenserver_hostname }}"
+        username: "{{ xenserver_username }}"
+        password: "{{ xenserver_password }}"
+        #folder: /testvms
+        name: testvm_2
+        name_desc: testvm_2
+        state: poweredon
+        template: custom_ubuntu22.04
+        disks:
+          - name: testvm_2
+            size_gb: 64
+            sr: Local storage
+        hardware:
+          num_cpus: 2
+          num_cpu_cores_per_socket: 1
+          memory_mb: 2048
+        networks:
+          - name: "{{ network_name }}"
+          - type: dhcp
+      validate_certs: false
+      wait_for_ip_address: true
+      delegate_to: localhost
+      register: deploy
