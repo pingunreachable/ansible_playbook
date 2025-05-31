@@ -1,6 +1,7 @@
 ---
 - name: Create new VM from template
   hosts: xenserver
+  gather_facts: true
   connection: ssh
   
   tasks:
