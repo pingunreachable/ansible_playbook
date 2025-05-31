@@ -27,7 +27,7 @@
         networks:
           - name: "{{ network_name }}"
           - type: dhcp
-      validate_certs: false
-      wait_for_ip_address: true
-      delegate_to: localhost
-      register: deploy
+        validate_certs: false
+        wait_for_ip_address: true
+        delegate_to: localhost
+        register: deploy
