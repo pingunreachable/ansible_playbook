@@ -1,12 +1,12 @@
 ---
-- name: Initial setup of linux servers
-  hosts: initial_setup_server
-  become: yes
-  become_method: sudo
+- name: Create new VM from template
+  #hosts: initial_setup_server
+  #become: yes
+  #become_method: sudo
   connection: ssh
   
   tasks:
-    - name: Create a VM from a template
+    - name: Create new VM from custom_ubuntu22.04 template
       community.general.xenserver_guest:
         hostname: "{{ xenserver_hostname }}"
         username: "{{ xenserver_username }}"
