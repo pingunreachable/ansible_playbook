@@ -2,6 +2,8 @@
 - name: Create new VM from template
   hosts: xenserver
   gather_facts: true
+  become: yes
+  become_method: sudo
   connection: ssh
   
   tasks:
