@@ -4,6 +4,8 @@
   gather_facts: false
   connection: ssh
   become: true
+  vars_files:
+    - compose_paths
 
   tasks:
     - name: Pull and start latest docker images
