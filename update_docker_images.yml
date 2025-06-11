@@ -15,7 +15,7 @@
         state: present
       register: output
       loop: 
-        - "{{ compose_paths }}"    
+        - "{{ vars }}"    
 
     - name: Show results of starting services
       ansible.builtin.debug:
