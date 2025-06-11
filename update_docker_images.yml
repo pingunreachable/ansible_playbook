@@ -14,7 +14,8 @@
         pull: always
         state: present
       register: output
-      loop: "{{ vars }}"    
+      loop: 
+        - "{{ compose_paths }}"    
 
     - name: Show results of starting services
       ansible.builtin.debug:
