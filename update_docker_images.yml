@@ -15,7 +15,7 @@
       loop: 
          - portainer
          - pihole
-         - unifi   
+         - unifi-controller   
 
     - name: Show results of starting services
       ansible.builtin.debug:
