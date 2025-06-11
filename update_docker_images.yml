@@ -15,8 +15,7 @@
         state: present
       register: output
       loop: 
-        - portainer
-        - pihole 
+        - "{{ container }}"    
 
     - name: Show results of starting services
       ansible.builtin.debug:
