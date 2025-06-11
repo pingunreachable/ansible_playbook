@@ -14,7 +14,8 @@
         pull: always
         state: present
       register: output
-      loop: "{{ container }}"    
+      loop: 
+         - "{{ container }}"    
 
     - name: Show results of starting services
       ansible.builtin.debug:
