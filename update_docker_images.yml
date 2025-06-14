@@ -12,7 +12,8 @@
         pull: always
         state: present
       register: output
-      loop: "{{ query('vars', 'all') }}"
+      loop: 
+         - "{{ container }}"
 
     - name: Show results of starting services
       ansible.builtin.debug:
