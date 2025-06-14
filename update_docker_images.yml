@@ -12,7 +12,10 @@
         pull: always
         state: present
       register: output
-      loop: "{{ item }}"
+      loop:
+         - portainer
+         - pihole
+         - unifi-controller
 
     - name: Show results of starting services
       ansible.builtin.debug:
