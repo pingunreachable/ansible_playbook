@@ -13,7 +13,7 @@
         state: present
       register: output
       loop: 
-         - "{{ container }}"
+         - "{{ vars }}"
 
     - name: Show results of starting services
       ansible.builtin.debug:
