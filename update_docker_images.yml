@@ -12,8 +12,7 @@
         pull: always
         state: present
       register: output
-      loop: 
-         - "{{ vars }}"
+      loop: "{{ vars }}"
 
     - name: Show results of starting services
       ansible.builtin.debug:
