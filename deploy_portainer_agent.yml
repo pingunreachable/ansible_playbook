@@ -1,0 +1,16 @@
+---
+- name: Depoly portainer agent
+  hosts: initial_setup_server
+  gather_facts: true
+  become: yes
+  become_method: sudo
+  connection: ssh
+
+  tasks:
+    - name: Copy Docker Compose files to target
+      ansible.builtin.copy:
+        src: /var/lib/semaphore/portainer_agent/
+        dest: /home/ubtsvradmin/
+        owner: ubtsvradmin
+        group: ubtsvradmin
+        mode: '0775'
