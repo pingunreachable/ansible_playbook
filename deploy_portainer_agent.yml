@@ -13,4 +13,5 @@
         dest: /home/ubtsvradmin/portainer_agent/docker-compose.yml
         owner: ubtsvradmin
         group: ubtsvradmin
+        directory_mode: '0775'
         mode: '0775'
