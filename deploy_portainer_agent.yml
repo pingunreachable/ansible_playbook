@@ -9,8 +9,8 @@
   tasks:
     - name: Copy Docker Compose files to target
       ansible.builtin.copy:
-        src: /var/lib/semaphore/portainer_agent/
-        dest: /home/ubtsvradmin/portainer_agent/
+        src: /var/lib/semaphore/portainer_agent/docker-compose.yml
+        dest: /home/ubtsvradmin/portainer_agent/docker-compose.yml
         owner: ubtsvradmin
         group: ubtsvradmin
         mode: '0775'
