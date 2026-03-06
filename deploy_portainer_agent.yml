@@ -18,7 +18,7 @@
 
     - name: Pull and start latest portainer agent docker images
       community.docker.docker_compose_v2:
-        project_src: /var/lib/semaphore/portainer_agent/docker-compose.yml
+        project_src: /var/lib/semaphore/portainer_agent/
         pull: always
         state: present
       register: output
