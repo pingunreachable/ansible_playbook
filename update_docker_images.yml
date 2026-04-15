@@ -22,7 +22,7 @@
         var: output
 
 - name: Update ubtserver-media containers to latest image
-  hosts: ubtserver_networkmgmt
+  hosts: ubtserver_media
   gather_facts: false
   connection: ssh
   become: true
