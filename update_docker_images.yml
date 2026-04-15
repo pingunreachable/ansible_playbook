@@ -1,5 +1,5 @@
 ---
-- name: Update existing docker containers to latest image
+- name: Update ubtserver-networkmgmt containers to latest image
   hosts: ubtserver_networkmgmt
   gather_facts: false
   connection: ssh
@@ -16,6 +16,29 @@
          - portainer
          - pihole
          - unifi-controller
+
+    - name: Show results of starting services
+      ansible.builtin.debug:
+        var: output
+
+- name: Update ubtserver-media containers to latest image
+  hosts: ubtserver_networkmgmt
+  gather_facts: false
+  connection: ssh
+  become: true
+
+  tasks:
+    - name: Pull and start latest docker images
+      community.docker.docker_compose_v2:
+        project_src: "{{ item }}"
+        pull: always
+        state: present
+      register: output
+      loop:
+         - firefox
+         - jellyfin
+         - qbittorrent
+         - torrent_vpn
 
     - name: Show results of starting services
       ansible.builtin.debug:
