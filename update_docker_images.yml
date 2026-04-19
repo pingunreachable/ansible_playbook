@@ -38,7 +38,7 @@
          - firefox
          - jellyfin
          - qbittorrent
-         - torrent_vpn
+         - downloadsbox
 
     - name: Show results of starting services
       ansible.builtin.debug:
