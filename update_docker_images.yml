@@ -37,7 +37,6 @@
       loop:
          - firefox
          - jellyfin
-         - qbittorrent
          - downloadsbox
 
     - name: Show results of starting services
