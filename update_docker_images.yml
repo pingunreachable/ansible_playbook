@@ -37,7 +37,6 @@
       loop:
          - firefox
          - jellyfin
-         - downloadsbox
 
     - name: Show results of starting services
       ansible.builtin.debug:
